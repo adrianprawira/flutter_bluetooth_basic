@@ -93,7 +93,12 @@ public class FlutterBluetoothBasicPlugin implements MethodCallHandler, RequestPe
                 != PackageManager.PERMISSION_GRANTED) {
           ActivityCompat.requestPermissions(
                   activity,
-                  new String[] {Manifest.permission.ACCESS_COARSE_LOCATION},
+                  new String[] 
+                  {
+                    Manifest.permission.ACCESS_FINE_LOCATION, 
+                    Manifest.permission.ACCESS_COARSE_LOCATION, 
+                    // Manifest.permission.ACCESS_BACKGROUND_LOCATION
+                  },
                   REQUEST_COARSE_LOCATION_PERMISSIONS);
           pendingCall = call;
           pendingResult = result;
